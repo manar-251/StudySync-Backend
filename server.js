@@ -34,10 +34,12 @@ app.use(logger('dev'));
 app.use('/auth', authCtrl);
 app.use('/test-jwt', testJwtRouter);
 
-app.use("/tasks", tasksRoutes);
-app.use("/studySessions", studySessionsRoutes);
+
 // Protected Routes
 app.use(verifyToken);
+app.use("/tasks", tasksRoutes);
+app.use("/studySessions", studySessionsRoutes);
+
 app.use('/users', usersCtrl);
 
 app.listen(PORT, () => {
