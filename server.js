@@ -18,6 +18,7 @@ const usersCtrl = require('./controllers/users');
 const tasksRoutes = require('./routes/tasks');
 const studySessionsRoutes = require('./routes/studySessions');
 const wellnessLogsRoutes = require("./routes/wellnessLogs");
+const dashboardRoutes = require("./routes/dashboard");
 // MiddleWare
 const verifyToken = require('./middleware/verify-token');
 
@@ -41,6 +42,7 @@ app.use(verifyToken);
 app.use("/tasks", tasksRoutes);
 app.use("/studySessions", studySessionsRoutes);
 app.use("/wellnessLogs", wellnessLogsRoutes);
+app.use("/dashboard", dashboardRoutes);
 
 app.use('/users', usersCtrl);
 
