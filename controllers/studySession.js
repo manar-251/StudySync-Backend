@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const Task = require("../models/StudySession");
+const StudySession = require("../models/StudySession");
 const router = require('./auth');
 const User = require('../models/user');
 
@@ -13,8 +13,8 @@ async function index(req, res) {
 
     res.json(sessions);
   } catch (err) {
-    console.log(err);
-    res.status(500).json({ err: "Failed to fetch study sessions" });
+    console.error("Fetch study sessions error:", err);
+    return res.status(500).json({ err: err.message });
   }
 }
 
