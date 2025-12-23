@@ -17,6 +17,7 @@ const usersCtrl = require('./controllers/users');
 // Routes
 const tasksRoutes = require('./routes/tasks');
 const studySessionsRoutes = require('./routes/studySessions');
+const wellnessLogsRoutes = require("./routes/wellnessLogs");
 // MiddleWare
 const verifyToken = require('./middleware/verify-token');
 
@@ -39,6 +40,7 @@ app.use('/test-jwt', testJwtRouter);
 app.use(verifyToken);
 app.use("/tasks", tasksRoutes);
 app.use("/studySessions", studySessionsRoutes);
+app.use("/wellnessLogs", wellnessLogsRoutes);
 
 app.use('/users', usersCtrl);
 

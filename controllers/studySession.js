@@ -1,7 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const Task = require("../models/studySession");
+const Task = require("../models/StudySession");
 const router = require('./auth');
 const User = require('../models/user');
 
@@ -40,6 +40,8 @@ async function create(req, res) {
       status: "completed",
       note: note || "",
     });
+
+
 
     res.status(201).json(session);
   } catch (err) {
