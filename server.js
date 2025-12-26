@@ -43,8 +43,6 @@ app.use("/tasks", tasksRoutes);
 app.use("/studySessions", studySessionsRoutes);
 app.use("/wellnessLogs", wellnessLogsRoutes);
 app.use("/dashboard", dashboardRoutes);
-app.use("/api/users", require("./controllers/users"));
-
 app.use('/users', usersCtrl);
 
 app.listen(PORT, () => {
