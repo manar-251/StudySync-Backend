@@ -1,0 +1,155 @@
+# StudySync (Backend) ⚙️📚
+
+Track daily wellness habits:
+
+water glasses
+
+exercise minutes
+
+sleep hours
+
+View wellness history
+
+Update one log per day (upsert pattern)
+
+🎨 Dashboard Summary
+
+One endpoint that returns:
+
+tasks totals (completed/remaining)
+
+total study minutes/hours
+
+latest wellness log
+
+🧩 API Routes
+🔐 Auth
+
+POST /auth/sign-up
+
+POST /auth/sign-in
+
+Example body:
+
+{
+  "username": "test",
+  "password": "1234"
+}
+
+👤 Users (Protected)
+
+GET /users
+
+GET /users/current-user
+
+GET /users/:id
+
+Optional improvement:
+
+PUT /users/current-user (to allow profile editing from frontend)
+
+✅ Tasks (Protected)
+
+Base: /tasks
+
+GET /tasks
+
+POST /tasks
+
+PUT /tasks/:id
+
+DELETE /tasks/:id
+
+Example:
+
+{
+  "title": "Finish report",
+  "description": "Write final section",
+  "dueDate": "2025-12-31",
+  "priority": "high",
+  "completed": false
+}
+
+⏱️ Study Sessions (Protected)
+
+Base: /studySessions
+
+GET /studySessions
+
+POST /studySessions
+
+DELETE /studySessions/:id
+
+Example:
+
+{
+  "startTime": "2025-12-27T10:00:00.000Z",
+  "endTime": "2025-12-27T11:00:00.000Z",
+  "status": "completed"
+}
+
+💧 Wellness Logs (Protected)
+
+Base: /wellnessLogs
+
+GET /wellnessLogs
+
+POST /wellnessLogs
+
+DELETE /wellnessLogs/:id
+
+Example:
+
+{
+  "date": "2025-12-27",
+  "waterGlasses": 6,
+  "exerciseMinutes": 20,
+  "sleepHours": 7
+}
+
+📊 Dashboard (Protected)
+
+GET /dashboard
+
+Example response:
+
+{
+  "tasks": { "total": 4, "completed": 1 },
+  "study": { "totalMinutes": 210, "totalHours": 3.5 },
+  "wellness": {
+    "date": "2025-12-27T00:00:00.000Z",
+    "waterGlasses": 6,
+    "exerciseMinutes": 20,
+    "sleepHours": 7
+  }
+}
+
+🧱 Tech Stack
+
+Node.js
+
+Express.js
+
+MongoDB + Mongoose
+
+JWT Authentication
+
+bcrypt (password hashing)
+
+CORS
+
+🧭 Next Steps (Stretch Goals)
+
+Add full profile update endpoint (PUT /users/current-user)
+
+Add validation + better error messages
+
+Add analytics endpoints (weekly/monthly study & wellness stats)
+
+Add rate limiting & security hardening
+
+
+🙌 Attributions
+
+Express + Mongoose
+JWT auth pattern

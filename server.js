@@ -34,8 +34,6 @@ app.use(logger('dev'));
 
 // Public
 app.use('/auth', authCtrl);
-app.use('/test-jwt', testJwtRouter);
-
 
 // Protected Routes
 app.use(verifyToken);
