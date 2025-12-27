@@ -1,5 +1,97 @@
 # StudySync (Backend) ⚙️📚
 
+## 🧠 Overview
+StudySync is a productivity API built with **Node.js + Express + MongoDB**.
+It supports authentication with **JWT** and provides endpoints for:
+- Tasks management
+- Study sessions tracking
+- Wellness logging (water / exercise / sleep)
+- Dashboard summaries (quick overview of everything)
+
+This repository contains the **back-end** portion of the MERN stack project — built with **Express**, **Mongoose**, and connected to MongoDB.
+
+---
+
+## 🖼️ Screenshot / Logo
+(Optional) Add a logo or API screenshot here
+
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+- Node.js
+- MongoDB (local) OR MongoDB Atlas URI
+
+### 📦 Installation
+```bash
+npm install
+
+⚙️ Environment Variables
+
+Create a .env file in the project root:
+
+MONGODB_URI=mongodb://127.0.0.1:27017/studysync
+JWT_SECRET=your_secret_key_here
+PORT=3000
+
+▶️ Run the Server
+npm run dev
+
+
+or:
+
+npm start
+
+
+Server should run on:
+
+http://localhost:3000
+
+🔗 Live Demo & Links
+
+API Deployment: (add link)
+
+Frontend Repository: (add link)
+
+Planning Docs (ERD / User Stories / Wireframes): (add link)
+
+✨ Key Features
+🔐 Authentication (JWT)
+
+Sign Up / Sign In
+
+Protected routes using Authorization: Bearer <token>
+
+User info routes (current user)
+
+Note: Your ERD includes email, but the current backend may not store it yet.
+If you want email support, add email to the User model + update auth controller.
+
+✅ Tasks API
+
+Create tasks with title + due date
+
+Update tasks
+
+Delete tasks
+
+Mark tasks complete
+
+Fetch tasks per user
+
+⏱️ Study Sessions API
+
+Save sessions (start/end time)
+
+View study history
+
+Delete sessions
+
+Dashboard totals
+
+💧 Wellness Logs API
+
 Track daily wellness habits:
 
 water glasses
@@ -148,8 +240,8 @@ Add analytics endpoints (weekly/monthly study & wellness stats)
 
 Add rate limiting & security hardening
 
-
 🙌 Attributions
 
 Express + Mongoose
+
 JWT auth pattern
